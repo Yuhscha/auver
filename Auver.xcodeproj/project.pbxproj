@@ -6,8 +6,18 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		92DA22DB2E6C13CC00AC49D9 /* AudioProcessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92DA22DA2E6C13CC00AC49D9 /* AudioProcessor.cpp */; };
+		92DA22DE2E6C17BF00AC49D9 /* PlugInInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92DA22DD2E6C17BF00AC49D9 /* PlugInInterface.cpp */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		92DA222F2E69C4C100AC49D9 /* Auver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Auver.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		92DA22D92E6C13CC00AC49D9 /* AudioProcessor.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AudioProcessor.hpp; sourceTree = "<group>"; };
+		92DA22DA2E6C13CC00AC49D9 /* AudioProcessor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AudioProcessor.cpp; sourceTree = "<group>"; };
+		92DA22DC2E6C17BF00AC49D9 /* PlugInInterface.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PlugInInterface.hpp; sourceTree = "<group>"; };
+		92DA22DD2E6C17BF00AC49D9 /* PlugInInterface.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PlugInInterface.cpp; sourceTree = "<group>"; };
+		92DA22E12E6C18F400AC49D9 /* AuverDriver-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AuverDriver-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -32,6 +42,7 @@
 		92DA22262E69C4C100AC49D9 = {
 			isa = PBXGroup;
 			children = (
+				92DA22D52E6C133100AC49D9 /* AuverDriver */,
 				92DA22312E69C4C100AC49D9 /* Auver */,
 				92DA22302E69C4C100AC49D9 /* Products */,
 			);
@@ -43,6 +54,42 @@
 				92DA222F2E69C4C100AC49D9 /* Auver.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		92DA22D52E6C133100AC49D9 /* AuverDriver */ = {
+			isa = PBXGroup;
+			children = (
+				92DA22D82E6C136C00AC49D9 /* Bridge */,
+				92DA22D72E6C136200AC49D9 /* HAL */,
+				92DA22D62E6C135700AC49D9 /* Core */,
+			);
+			path = AuverDriver;
+			sourceTree = "<group>";
+		};
+		92DA22D62E6C135700AC49D9 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				92DA22D92E6C13CC00AC49D9 /* AudioProcessor.hpp */,
+				92DA22DA2E6C13CC00AC49D9 /* AudioProcessor.cpp */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		92DA22D72E6C136200AC49D9 /* HAL */ = {
+			isa = PBXGroup;
+			children = (
+				92DA22DC2E6C17BF00AC49D9 /* PlugInInterface.hpp */,
+				92DA22DD2E6C17BF00AC49D9 /* PlugInInterface.cpp */,
+			);
+			path = HAL;
+			sourceTree = "<group>";
+		};
+		92DA22D82E6C136C00AC49D9 /* Bridge */ = {
+			isa = PBXGroup;
+			children = (
+				92DA22E12E6C18F400AC49D9 /* AuverDriver-Bridging-Header.h */,
+			);
+			path = Bridge;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -82,6 +129,7 @@
 				TargetAttributes = {
 					92DA222E2E69C4C100AC49D9 = {
 						CreatedOnToolsVersion = 16.4;
+						LastSwiftMigration = 1640;
 					};
 				};
 			};
@@ -119,6 +167,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92DA22DE2E6C17BF00AC49D9 /* PlugInInterface.cpp in Sources */,
+				92DA22DB2E6C13CC00AC49D9 /* AudioProcessor.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +298,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Auver/Auver.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -264,6 +315,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -273,6 +325,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Auver/Auver.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
